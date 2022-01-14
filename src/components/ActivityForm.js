@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import '../scss/ActivityForm.scss';
 
 const ActivityForm = () => {
   const [activities, setActivity] = useState('');
