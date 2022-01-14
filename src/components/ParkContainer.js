@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import ActivityForm from './ActivityForm';
 import ParkCard from './ParkCard';
+import ParkPage from './ParkPage';
 
 const ParkContainer = () => {
   const [parks, setParks] = useState([]);
@@ -28,7 +29,7 @@ const ParkContainer = () => {
       <section>
         <ParkCard />
       </section>
-      {/* <ParkPage /> */}
+      {/* <ParkPage park="Joshua Tree"/> */}
     </main>
   )
 }
