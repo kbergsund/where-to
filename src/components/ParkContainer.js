@@ -12,18 +12,31 @@ const ParkContainer = () => {
     try {
       const fetchedData = await fetch(`https://developer.nps.gov/api/v1/${url}api_key=hBaA4GZsEXWedcUXnVCAvMCWhxf5u2Jp0z9gPDRy`)
       const { data } = await fetchedData.json()
-      state === 'parks' ? setParks(data) : setActivities(data)
-    } catch(err) {
+      state === 'parks' ? formatParkData(data): setActivities(data)
+    } catch (err) {
       console.log(err)
     }
+  }
+
+  const formatParkData = (data) => {
+    const formattedParks = data.map(park => {
+      return {
+        fullName: park.fullName,
+        url: park.url,
+        description: park.description,
+        activities: park.activities.map(activity => activity.name),
+        images: park.images
+      }
+      setParks(formattedParks)
+    })
   }
 
   useEffect(() => {
     fetchData('parks?stateCode=CA&', 'parks')
     fetchData('activities?', 'activities')
-  })
+  }, [])
 
-  return(
+  return (
     <main>
       <ActivityForm />
       <section>
