@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import ActivityForm from './ActivityForm';
 import ParkCard from './ParkCard';
 import ParkPage from './ParkPage';
+import '../scss/ParkContainer.scss';
 
 const ParkContainer = () => {
   const [parks, setParks] = useState([]);
@@ -18,10 +19,10 @@ const ParkContainer = () => {
     }
   }
 
-  useEffect(() => {
-    fetchData('parks?stateCode=CA&', 'parks')
-    fetchData('activities?', 'activities')
-  })
+  // useEffect(() => {
+  //   fetchData('parks?stateCode=CA&', 'parks')
+  //   fetchData('activities?', 'activities')
+  // }, [])
 
   return(
     <main>
