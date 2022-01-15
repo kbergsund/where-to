@@ -1,8 +1,10 @@
 import { useState } from 'react';
 import '../scss/ActivityForm.scss';
 
-const ActivityForm = () => {
-  const [activities, setActivity] = useState('');
+const ActivityForm = ({ activities }) => {
+  const [selectedActivity, setActivity] = useState('');
+
+  const generateActivityOptions = activities.map((activity, index) => <option key={index} value={activity} />)
 
   return (
     <form>
@@ -11,11 +13,10 @@ const ActivityForm = () => {
         list="activityList"
         placeholder="What do you love to do?"
         // id="activity"
-        value={activities}
+        value={selectedActivity}
         onChange={e => setActivity(e.target.value)} />
       <datalist id="activityList">
-        <option value="Canoeing" />
-        <option value="Biking" />
+        {generateActivityOptions}
       </datalist>
     </form>
   )
