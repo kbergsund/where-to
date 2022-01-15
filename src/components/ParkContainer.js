@@ -7,6 +7,7 @@ import '../scss/ParkContainer.scss';
 const ParkContainer = () => {
   const [parks, setParks] = useState([]);
   const [activities, setActivities] = useState([]);
+  const [filteredParks, setFilteredParks] = useState([]);
   const [bucketList, setBucketList] = useState([]);
 
   const fetchData = async () => {
@@ -35,16 +36,17 @@ const ParkContainer = () => {
     }, [])
   }
 
+  const filterParks = (activity) => {
+    setFilteredParks(parks.filter(park => park.activities.includes(activity)))
+  }
+
   useEffect(() => {
     fetchData()
-    // parks && generateActivityList(parks)
-    // generateActivityList(parks)
-    // fetchData('activities?', 'activities')
   }, [])
 
   return (
     <main>
-      <ActivityForm activities={activities} />
+      <ActivityForm activities={activities} filterParks={filterParks}/>
       <section>
         <ParkCard />
       </section>

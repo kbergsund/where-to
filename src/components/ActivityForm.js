@@ -1,10 +1,15 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import '../scss/ActivityForm.scss';
 
-const ActivityForm = ({ activities }) => {
+const ActivityForm = ({ activities, filterParks }) => {
   const [selectedActivity, setActivity] = useState('');
 
   const generateActivityOptions = activities.map((activity, index) => <option key={index} value={activity} />)
+
+  useEffect(() => {
+    filterParks(selectedActivity)
+    console.log('filtering')
+  }, [selectedActivity])
 
   return (
     <form>
