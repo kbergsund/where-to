@@ -37,8 +37,14 @@ const ParkContainer = () => {
   }
 
   const filterParks = (activity) => {
-    setFilteredParks(parks.filter(park => park.activities.includes(activity)))
+    const filteredParks = parks.filter(park => park.activities.includes(activity))
+    console.log(filteredParks === [])
+    setFilteredParks(filteredParks)
   }
+
+  const displayParkCards = parks.map(park => <ParkCard name={park.fullName} imageURL={park.images[0].url} />) 
+
+  const displayFilteredCards = filteredParks && filteredParks.map(park => <ParkCard name={park.fullName} imageURL={park.images[0].url} />)
 
   useEffect(() => {
     fetchData()
@@ -48,7 +54,7 @@ const ParkContainer = () => {
     <main>
       <ActivityForm activities={activities} filterParks={filterParks}/>
       <section>
-        <ParkCard />
+        {displayParkCards}
       </section>
       {/* <ParkPage park="Joshua Tree"/> */}
     </main>

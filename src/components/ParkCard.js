@@ -1,7 +1,13 @@
-const ParkCard = () => {
+import '../scss/ParkCard.scss';
+
+const ParkCard = ({ name, imageURL}) => {
+  const backgroundImgStyle = {
+    backgroundImage: `url(${imageURL})`,
+    backgroundPosition: 'cover'
+  }
   return(
-    <section>
-      <h2>Joshua Tree</h2>
+    <section className='park-card' style={backgroundImgStyle}>
+      <h2>{name}</h2>
     </section>
   )
 }

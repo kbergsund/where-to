@@ -8,11 +8,10 @@ const ActivityForm = ({ activities, filterParks }) => {
 
   useEffect(() => {
     filterParks(selectedActivity)
-    console.log('filtering')
   }, [selectedActivity])
 
   return (
-    <form>
+    <form onSubmit={e => e.preventDefault()}>
       {/* <label htmlFor="activity">Select Activity:</label> */}
       <input
         list="activityList"
