@@ -1,22 +1,26 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import '../scss/ActivityForm.scss';
 
-const ActivityForm = () => {
-  const [activities, setActivity] = useState('');
+const ActivityForm = ({ activities, filterParks }) => {
+  const [selectedActivity, setActivity] = useState('');
+
+  const generateActivityOptions = activities.map((activity, index) => <option key={index} value={activity} />)
+
+  useEffect(() => {
+    filterParks(selectedActivity)
+  }, [selectedActivity])
 
   return (
-    <form>
-      <label htmlFor="activities">Select Activity:</label>
+    <form onSubmit={e => e.preventDefault()}>
+      {/* <label htmlFor="activity">Select Activity:</label> */}
       <input
-        list="activity"
+        list="activityList"
         placeholder="What do you love to do?"
-        name="activities"
-        id="activities"
-        value={activities}
+        // id="activity"
+        value={selectedActivity}
         onChange={e => setActivity(e.target.value)} />
-      <datalist id="activity">
-        <option value="Canoeing" />
-        <option value="Biking" />
+      <datalist id="activityList">
+        {generateActivityOptions}
       </datalist>
     </form>
   )
