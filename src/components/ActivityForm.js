@@ -6,15 +6,14 @@ const ActivityForm = () => {
 
   return (
     <form>
-      <label htmlFor="activities">Select Activity:</label>
+      {/* <label htmlFor="activity">Select Activity:</label> */}
       <input
-        list="activity"
+        list="activityList"
         placeholder="What do you love to do?"
-        name="activities"
-        id="activities"
+        // id="activity"
         value={activities}
         onChange={e => setActivity(e.target.value)} />
-      <datalist id="activity">
+      <datalist id="activityList">
         <option value="Canoeing" />
         <option value="Biking" />
       </datalist>
