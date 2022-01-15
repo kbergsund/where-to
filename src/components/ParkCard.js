@@ -3,7 +3,7 @@ import '../scss/ParkCard.scss';
 const ParkCard = ({ name, imageURL}) => {
   const backgroundImgStyle = {
     backgroundImage: `url(${imageURL})`,
-    backgroundPosition: 'cover'
+    backgroundSize: 'cover'
   }
   return(
     <section className='park-card' style={backgroundImgStyle}>

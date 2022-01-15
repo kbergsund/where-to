@@ -1,5 +1,4 @@
 header {
-  border: 1px solid blue;
   height: 50vh;
   background:
     linear-gradient(to bottom, transparent, #f2f2f2),
@@ -17,7 +16,6 @@ header {
 }
 
 nav {
-  border: 2px solid green;
   display: flex;
   justify-content: space-between;
   width: 15vw;

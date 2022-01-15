@@ -42,7 +42,7 @@ const ParkContainer = () => {
     setFilteredParks(filteredParks)
   }
 
-  const displayParkCards = !filteredParks.length ? parks.map((park, index) => <ParkCard key={index} name={park.fullName} imageURL={park.images[0].url} />) : filteredParks.map((park, index) => <ParkCard key={index} name={park.fullName} imageURL={park.images[0].url} />)
+  const displayParkCards = !filteredParks.length ? parks.map((park, index) => <ParkCard key={index} name={park.fullName} imageURL={park.images[0].url} />) : filteredParks.map((park, index) => <ParkCard key={index} name={park.fullName} imageURL={park.images[1].url} />)
 
   useEffect(() => {
     fetchData()
