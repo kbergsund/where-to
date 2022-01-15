@@ -1,4 +1,5 @@
-import { useState, useEffect } from 'react';
+import { Fragment, useState, useEffect } from 'react';
+import { Route, Routes } from 'react-router-dom';
 import ActivityForm from './ActivityForm';
 import ParkCard from './ParkCard';
 import ParkPage from './ParkPage';
@@ -38,7 +39,6 @@ const ParkContainer = () => {
 
   const filterParks = (activity) => {
     const filteredParks = parks.filter(park => park.activities.includes(activity))
-    console.log(filteredParks)
     setFilteredParks(filteredParks)
   }
 
@@ -50,11 +50,18 @@ const ParkContainer = () => {
 
   return (
     <main>
-      <ActivityForm activities={activities} filterParks={filterParks}/>
-      <section className='park-container'>
-        {displayParkCards}
-      </section>
-      {parks.length && <ParkPage park={parks[0]}/>}
+      <Routes>
+        <Route path='/' element={
+          <Fragment>
+            <ActivityForm activities={activities} filterParks={filterParks} />
+            <section className='park-container'>
+              {displayParkCards}
+            </section>
+          </Fragment>
+        } />
+        <Route path='/:parkName' element={ <ParkPage park={parks[0]} />} />
+          {/* {parks.length && <ParkPage park={parks[0]} />} */}
+      </Routes>
     </main>
   )
 }
