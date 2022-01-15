@@ -1,8 +1,15 @@
 main {
   background-color: #f2f2f2;
-  border: 2px solid orange;
   min-height: 80vh;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.park-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-gap: 1em;
+  width: 90vw;
+  margin-top: 2em;
 }

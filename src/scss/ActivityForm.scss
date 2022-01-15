@@ -1,16 +1,16 @@
 form {
-  border: 2px solid blue;
   width: 90vw;
   height: 4em;
   background-color: #AEF2E6;
-  border-radius: 20px;
+  border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
 
   input {
-    border-radius: 20px;
+    border-radius: 7px;
     width: 70%;
-    height: 2em;
+    height: 2.75em;
+    padding: 1em;
   }
 }

@@ -7,5 +7,15 @@
 
 body {
   min-height: 100vh;
-  border: 1px solid green;
+  color: #252324;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+form,
+input,
+.park-card {
+  box-shadow: 0 2px 9px -6px;
 }

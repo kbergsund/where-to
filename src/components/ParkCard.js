@@ -1,13 +1,17 @@
 import '../scss/ParkCard.scss';
 
-const ParkCard = ({ name, imageURL}) => {
+const ParkCard = ({ name, imageURL }) => {
   const backgroundImgStyle = {
-    backgroundImage: `url(${imageURL})`,
-    backgroundPosition: 'cover'
+    backgroundImage: `url(${imageURL})`
   }
-  return(
-    <section className='park-card' style={backgroundImgStyle}>
-      <h2>{name}</h2>
+  return (
+    <section className='park-card'>
+      <div className='background-image' style={backgroundImgStyle}>
+      </div>
+      <div className='white-box'>
+        <h2>{name}</h2>
+        <button className='homepage-add-btn'>+</button>
+      </div>
     </section>
   )
 }
