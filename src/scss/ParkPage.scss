@@ -1,0 +1,17 @@
+.park-page {
+  width: 90vw;
+  height: 17em;
+  background-color: #fff;
+  border-radius: 10px;
+  display: flex;
+  padding: 1.5em 2em;
+
+  .left-side-content {
+    margin-right: 10em;
+    border: 1px solid blue;
+  }
+
+  img {
+    height: 70%;
+  }
+}

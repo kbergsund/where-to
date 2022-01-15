@@ -50,11 +50,11 @@ const ParkContainer = () => {
 
   return (
     <main>
-      <ActivityForm activities={activities} filterParks={filterParks}/>
+      {/* <ActivityForm activities={activities} filterParks={filterParks}/>
       <section className='park-container'>
         {displayParkCards}
-      </section>
-      {/* <ParkPage park="Joshua Tree"/> */}
+      </section> */}
+      <ParkPage park={parks[0]}/>
     </main>
   )
 }
