@@ -4,6 +4,10 @@
   overflow: hidden;
   border-radius: 10px;
   position: relative;
+
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 .background-image {
@@ -19,7 +23,6 @@
 
   &:hover {
     transform: scale(1.05);
-    cursor: pointer;
   }
 }
 
