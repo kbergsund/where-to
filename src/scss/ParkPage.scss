@@ -9,6 +9,13 @@
   .left-side-content {
     margin-right: 10em;
     border: 1px solid blue;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .read-more-btn {
+      margin-top: 3em;
+    }
   }
 
   img {
