@@ -1,7 +1,7 @@
 import '../scss/ParkPage.scss';
 
 const ParkPage = ({ park }) => {
-  const displayActivities = park.activities.map(activity => <p className='activity'>{activity}</p>)
+  const displayActivities = park.activities.map((activity, index) => <p key={index} className='activity'>{activity}</p>)
 
   return (
     <section className='park-page'>
@@ -14,7 +14,7 @@ const ParkPage = ({ park }) => {
           {displayActivities}
         </div>
         <p>{park.description}</p>
-        <a href={park.url}>Learn More</a>
+        <a href={park.url} target="_blank" rel="noreferrer">Learn More</a>
       </div>
       <img src={park.images[1].url} alt={park.images[1].altText}></img>
     </section>
