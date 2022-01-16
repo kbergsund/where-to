@@ -5,8 +5,10 @@ const Header = () => {
     <header>
       <h1>Where to Next?</h1>
       <nav>
-        <li>Home</li>
-        <li>Bucket List</li>
+        <ul>
+          <li>Home</li>
+          <li>Bucket List</li>
+        </ul>
       </nav>
     </header>
   )
