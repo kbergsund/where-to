@@ -63,6 +63,13 @@ const ParkContainer = () => {
           </Fragment>
         } />
         <Route path='/:parkCode' element={ <ParkPage fetchData={fetchData} parks={parks}/> } />
+        <Route path='/bucketlist' element = {
+        <Fragment>
+            <ActivityForm activities={activities} filterParks={filterParks} />
+            <section className='park-container'>
+              {/* {displayBucketListCards} */}
+            </section>
+          </Fragment>} />
       </Routes>
     </main>
   )

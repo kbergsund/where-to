@@ -5,22 +5,44 @@ header {
     url('../assets/HeroImage.jpeg');
   background-size: cover;
   background-position: center;
-  // filter: grayscale(100%);
   padding: 1em;
   display: flex;
   justify-content: space-between;
 
   h1 {
-    color: #000;
+    text-decoration: none;
+    transition: all 100ms ease-in-out;
+
+    &:hover {
+      color: #F24738
+    }
   }
 }
 
 nav {
   display: flex;
   justify-content: space-between;
-  width: 15vw;
+  width: 160px;
 
-  li {
-    list-style: none;
+  .home-icon:hover {
+    color: #F24738;
+  }
+
+  .bucket-list-btn {
+    border-radius: 10px;
+    font-size: .8em;
+    height: 2.5em;
+    background-color: #F24738;
+    color: #fff;
+    width: 110px;
+    transition: all 100ms ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &:hover {
+      background-color: #F2B138;
+      color: #252324;
+    }
   }
 }
