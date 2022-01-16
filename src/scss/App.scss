@@ -6,6 +6,7 @@
 }
 
 body {
+  font-family: 'Nunito', 'Arial', sans-serif;
   min-height: 100vh;
   color: #252324;
 }
@@ -14,9 +15,18 @@ button:hover {
   cursor: pointer;
 }
 
+p {
+  font-size: .85em;
+}
+
 form,
 input,
+img,
+a,
 .park-card,
-.park-page {
+.park-page,
+.activity,
+.park-page-add-btn {
   box-shadow: 0 2px 9px -6px;
 }
+
