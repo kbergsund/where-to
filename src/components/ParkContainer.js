@@ -6,11 +6,14 @@ import ParkPage from './ParkPage';
 import '../scss/ParkContainer.scss';
 
 const ParkContainer = () => {
-  const [loading, setLoading] = useState(true)
   const [parks, setParks] = useState([]);
   const [activities, setActivities] = useState([]);
   const [filteredParks, setFilteredParks] = useState([]);
   const [bucketList, setBucketList] = useState([]);
+
+  useEffect(() => {
+    fetchData()
+  }, [])
 
   const fetchData = async () => {
     try {
@@ -44,12 +47,15 @@ const ParkContainer = () => {
     setFilteredParks(filteredParks)
   }
 
-  const displayParkCards = !filteredParks.length ? parks.map(park => <ParkCard key={park.parkCode} parkCode={park.parkCode} name={park.fullName} imageURL={park.images[0].url} />) : filteredParks.map(park => <ParkCard key={park.parkCode} parkCode={park.parkCode} name={park.fullName} imageURL={park.images[0].url} />)
+  const addToBucketList = (park) => {
+    !bucketList.includes(park) && setBucketList([...bucketList, park])
+  }
 
-  useEffect(() => {
-    fetchData()
-    setLoading(false)
-  }, [loading])
+  const displayParkCards = !filteredParks.length 
+  ? parks.map(park => <ParkCard key={park.parkCode} parkCode={park.parkCode} name={park.fullName} imageURL={park.images[0].url} />) 
+  : filteredParks.map(park => <ParkCard key={park.parkCode} parkCode={park.parkCode} name={park.fullName} imageURL={park.images[0].url} />)
+
+  const displayBucketListCards = !bucketList.length ? <p>You haven't added any trips to your bucket list yet!</p> : bucketList.map(park => <ParkCard key={park.parkCode} parkCode={park.parkCode} name={park.fullName} imageURL={park.images[0].url} />)
 
   return (
     <main>
@@ -62,12 +68,12 @@ const ParkContainer = () => {
             </section>
           </Fragment>
         } />
-        <Route path='/:parkCode' element={ <ParkPage fetchData={fetchData} parks={parks}/> } />
+        <Route path='/:parkCode' element={ <ParkPage parks={parks} addToBucketList={addToBucketList} /> } />
         <Route path='/bucketlist' element = {
         <Fragment>
             <ActivityForm activities={activities} filterParks={filterParks} />
             <section className='park-container'>
-              {/* {displayBucketListCards} */}
+              {displayBucketListCards}
             </section>
           </Fragment>} />
       </Routes>
