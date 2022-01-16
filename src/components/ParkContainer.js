@@ -6,6 +6,7 @@ import ParkPage from './ParkPage';
 import '../scss/ParkContainer.scss';
 
 const ParkContainer = () => {
+  const [loading, setLoading] = useState(true)
   const [parks, setParks] = useState([]);
   const [activities, setActivities] = useState([]);
   const [filteredParks, setFilteredParks] = useState([]);
@@ -47,7 +48,8 @@ const ParkContainer = () => {
 
   useEffect(() => {
     fetchData()
-  }, [])
+    setLoading(false)
+  }, [loading])
 
   return (
     <main>
@@ -60,7 +62,7 @@ const ParkContainer = () => {
             </section>
           </Fragment>
         } />
-        <Route path='/:parkCode' element={ <ParkPage parks={parks}/> } />
+        <Route path='/:parkCode' element={ <ParkPage fetchData={fetchData} parks={parks}/> } />
       </Routes>
     </main>
   )
