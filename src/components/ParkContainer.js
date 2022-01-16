@@ -2,7 +2,7 @@ import { Fragment, useState, useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import ActivityForm from './ActivityForm';
 import ParkCard from './ParkCard';
-import ParkPageWrapper from './ParkPageWrapper';
+import ParkPage from './ParkPage';
 import '../scss/ParkContainer.scss';
 
 const ParkContainer = () => {
@@ -60,8 +60,7 @@ const ParkContainer = () => {
             </section>
           </Fragment>
         } />
-        <Route path='/:parkCode' element={ <ParkPageWrapper parks={parks}/>} />
-          {/* {parks.length && <ParkPage park={parks[0]} />} */}
+        <Route path='/:parkCode' element={ <ParkPage parks={parks}/> } />
       </Routes>
     </main>
   )
