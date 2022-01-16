@@ -19,10 +19,17 @@ p {
   font-size: .85em;
 }
 
+a {
+  text-decoration: none;
+  color: #252324;
+  height: fit-content;
+}
+
 form,
 input,
 img,
-a,
+button,
+.learn-more-btn,
 .park-card,
 .park-page,
 .activity,

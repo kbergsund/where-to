@@ -18,11 +18,11 @@
   width: 100%;
   background-size: cover;
   background-position: top;
-  transition: all 200ms ease-in-out;
+  transition: all 100ms ease-in-out;
   position: absolute;
 
   &:hover {
-    transform: scale(1.05);
+    transform: scale(1.06);
   }
 }
 

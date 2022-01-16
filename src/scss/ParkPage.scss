@@ -30,17 +30,23 @@
       background-color: #F24738;
       color: #fff;
       min-width: 150px;
+      transition: all 100ms ease-in-out;
+
+      &:hover {
+        background-color: #F2B138;
+        color: #252324;
+      }
     }
   }
 
   .park-page-add-btn,
-  a {
+  .learn-more-btn {
     border-radius: 10px;
     font-size: .8em;
     min-height: 2.5em;
   }
 
-  a {
+  .learn-more-btn {
     background-color: #AEF2E6;
     display: flex;
     align-items: center;
@@ -49,6 +55,12 @@
     color: #252324;
     margin-top: 2em;
     width: 150px;
+    transition: all 100ms ease-in-out;
+
+    &:hover {
+      background-color: #252324;
+      color: #AEF2E6;
+    }
   }
 }
 
