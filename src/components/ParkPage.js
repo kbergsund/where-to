@@ -5,12 +5,12 @@ const ParkPage = ({ park }) => {
   return (
     <section className='park-page'>
       <div className='left-side-content'>
-        <h2>{park.fullName}</h2>
-        <button>Add to Bucket List</button>
+        <div className='bottom-btns'>
+        <h2 className='park-page-title'>{park.fullName}</h2>
+        <button className='park-page-add-btn'>Add to Bucket List</button>
+        </div>
         <p>{park.description}</p>
-        {/* <div className='bottom-btns'> */}
-          <button className='read-more-btn'>Read More</button>
-        {/* </div> */}
+        <a href={park.url}>Learn More</a>
       </div>
       {/* <div className='right-side-img'> */}
       <img src={park.images[1].url} alt={park.images[1].altText}></img>
