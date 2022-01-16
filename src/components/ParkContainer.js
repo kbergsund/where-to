@@ -2,7 +2,7 @@ import { Fragment, useState, useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import ActivityForm from './ActivityForm';
 import ParkCard from './ParkCard';
-import ParkPage from './ParkPage';
+import ParkPageWrapper from './ParkPageWrapper';
 import '../scss/ParkContainer.scss';
 
 const ParkContainer = () => {
@@ -18,6 +18,7 @@ const ParkContainer = () => {
       setParks(data.map(park => {
         return {
           fullName: park.fullName,
+          parkCode: park.parkCode,
           url: park.url,
           description: park.description,
           activities: park.activities.map(activity => activity.name),
@@ -42,7 +43,7 @@ const ParkContainer = () => {
     setFilteredParks(filteredParks)
   }
 
-  const displayParkCards = !filteredParks.length ? parks.map((park, index) => <ParkCard key={index} name={park.fullName} imageURL={park.images[0].url} />) : filteredParks.map((park, index) => <ParkCard key={index} name={park.fullName} imageURL={park.images[0].url} />)
+  const displayParkCards = !filteredParks.length ? parks.map(park => <ParkCard key={park.parkCode} parkCode={park.parkCode} name={park.fullName} imageURL={park.images[0].url} />) : filteredParks.map(park => <ParkCard key={park.parkCode} parkCode={park.parkCode} name={park.fullName} imageURL={park.images[0].url} />)
 
   useEffect(() => {
     fetchData()
@@ -59,7 +60,7 @@ const ParkContainer = () => {
             </section>
           </Fragment>
         } />
-        <Route path='/:parkName' element={ <ParkPage park={parks[0]} />} />
+        <Route path='/:parkCode' element={ <ParkPageWrapper parks={parks}/>} />
           {/* {parks.length && <ParkPage park={parks[0]} />} */}
       </Routes>
     </main>

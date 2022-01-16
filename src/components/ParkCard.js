@@ -1,13 +1,13 @@
 import { Link } from 'react-router-dom';
 import '../scss/ParkCard.scss';
 
-const ParkCard = ({ name, imageURL }) => {
+const ParkCard = ({ parkCode, name, imageURL }) => {
   const backgroundImgStyle = {
     backgroundImage: `url(${imageURL})`
   }
   return (
     <section className='park-card'>
-      <Link to={`/${name}`}>
+      <Link to={`/${parkCode}`}>
       <div className='background-image' style={backgroundImgStyle}>
       </div>
       <div className='white-box'>
