@@ -18,7 +18,7 @@ const ParkPage = ({ parks }) => {
           {displayActivities}
         </div>
         <p>{clickedPark.description}</p>
-        <a href={clickedPark.url}>Learn More</a>
+        <a href={clickedPark.url} target="_blank" rel="noreferrer">Learn More</a>
       </div>
       <img src={clickedPark.images[1].url} alt={clickedPark.images[1].altText}></img>
     </section>
