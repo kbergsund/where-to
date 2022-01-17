@@ -79,4 +79,9 @@ describe('Homepage Tests', () => {
     .get('.park-page-title').contains('Alcatraz Island')
   })
 
+  it('Router sad path- invalid URL', () => {
+    cy.visit('http://localhost:3000/#/banana')
+    .get('.park-page').contains('Invalid URL')
+  })
+
 })
