@@ -16,6 +16,10 @@ header {
     &:hover {
       color: #F24738
     }
+
+    &:active {
+      color: #252324
+    }
   }
 }
 
@@ -24,8 +28,14 @@ nav {
   justify-content: space-between;
   width: 160px;
 
-  .home-icon:hover {
-    color: #F24738;
+  .home-icon {
+    &:hover {
+      color: #F24738;
+    }
+
+    &:active {
+      color: #252324
+    }
   }
 
   .bucket-list-btn {
@@ -43,6 +53,11 @@ nav {
     &:hover {
       background-color: #F2B138;
       color: #252324;
+    }
+
+    &:active {
+      background-color: #F24738;
+      color: #fff;
     }
   }
 }

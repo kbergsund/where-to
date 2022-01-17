@@ -9,11 +9,18 @@ const ParkContainer = () => {
   const [parks, setParks] = useState([]);
   const [activities, setActivities] = useState([]);
   const [filteredParks, setFilteredParks] = useState([]);
-  const [bucketList, setBucketList] = useState([]);
+  const [bucketList, setBucketList] = useState(() => {
+    const existingBucketList = JSON.parse(localStorage.getItem("savedBucketList"));
+    return existingBucketList || []
+  })
 
   useEffect(() => {
     fetchData()
   }, [])
+
+  useEffect(() => {
+    localStorage.setItem("savedBucketList", JSON.stringify(bucketList))
+  }, [bucketList])
 
   const fetchData = async () => {
     try {
@@ -71,7 +78,6 @@ const ParkContainer = () => {
         <Route path='/:parkCode' element={ <ParkPage parks={parks} addToBucketList={addToBucketList} /> } />
         <Route path='/bucketlist' element = {
         <Fragment>
-            <ActivityForm activities={activities} filterParks={filterParks} />
             <section className='park-container'>
               {displayBucketListCards}
             </section>
