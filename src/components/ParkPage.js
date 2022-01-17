@@ -3,11 +3,16 @@ import { useParams } from 'react-router-dom';
 import propTypes from 'prop-types';
 import '../scss/ParkPage.scss';
 
-const ParkPage = ({ parks, addToBucketList }) => {
+const ParkPage = ({ parks, addToBucketList, addedToBucketList }) => {
   const clickedParkCode = useParams().parkCode;
   const clickedPark = parks.find(park => park.parkCode === clickedParkCode)
 
   const displayActivities = clickedPark && clickedPark.activities.map((activity, index) => <p key={index} className='activity'>{activity}</p>)
+
+  const handleBucketListButton = (park) => {
+    addToBucketList(park)
+    console.log(addedToBucketList)
+  }
 
   const clickedParkDisplay = clickedPark &&
     <Fragment>
@@ -15,7 +20,7 @@ const ParkPage = ({ parks, addToBucketList }) => {
         <div className='title-btn'>
           <h2 className='park-page-title'>{clickedPark.fullName}</h2>
           <button className='park-page-add-btn'
-            onClick={() => addToBucketList(clickedPark)}>Add to Bucket List</button>
+            onClick={() => handleBucketListButton(clickedPark)}>Add to Bucket List</button>
         </div>
         <div className='activity-container'>
           {displayActivities}
