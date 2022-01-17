@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import propTypes from 'prop-types';
 import '../scss/ParkCard.scss';
 
 const ParkCard = ({ parkCode, name, imageURL }) => {
@@ -20,3 +21,9 @@ const ParkCard = ({ parkCode, name, imageURL }) => {
 }
 
 export default ParkCard;
+
+ParkCard.propTypes = {
+  parkCode: propTypes.string.isRequired,
+  name: propTypes.string.isRequired,
+  imageURL: propTypes.string.isRequired
+}
