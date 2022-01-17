@@ -67,6 +67,7 @@ const ParkContainer = () => {
   return (
     <main>
       <Routes>
+        <Route path='*' element={<p>HELLO</p>} />
         <Route path='/' element={
           <Fragment>
             <ActivityForm activities={activities} filterParks={filterParks} />

@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import propTypes from 'prop-types';
 import '../scss/ActivityForm.scss';
 
 const ActivityForm = ({ activities, filterParks }) => {
@@ -27,3 +28,8 @@ const ActivityForm = ({ activities, filterParks }) => {
 }
 
 export default ActivityForm;
+
+ActivityForm.propTypes = {
+  activities: propTypes.array.isRequired,
+  filterParks: propTypes.func.isRequired
+}
