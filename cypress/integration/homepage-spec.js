@@ -1,0 +1,67 @@
+describe('Homepage Tests', () => {
+  beforeEach(() => {
+    cy.fixture('./parks.json')
+      .then((allParks) => {
+        cy.intercept('GET', 'https://developer.nps.gov/api/v1/parks?stateCode=CA&api_key=hBaA4GZsEXWedcUXnVCAvMCWhxf5u2Jp0z9gPDRy', {
+          statusCode: 200,
+          body: allParks
+        })
+        cy.visit('http://localhost:3000/#/')
+      })
+  })
+
+  it('Header- app title & nav elements', () => {
+    cy.get('header')
+    .contains('h1', 'Where to Next?')
+    .get('.home-icon')
+    .get('.bucket-list-btn').contains('My Bucket List')
+  })
+
+  it('ParkCards- display all on load', () => {
+    cy.get('main')
+    .get(':nth-child(1) > a > .background-image').should('have.css', 'background-image')
+    .get(':nth-child(1) > a > .white-box').contains('h2', 'Alcatraz Island')
+    .get('.homepage-add-btn').contains('+')
+
+    .get(':nth-child(2) > a > .background-image').should('have.css', 'background-image')
+    .get(':nth-child(2) > a > .white-box').contains('h2', 'Cabrillo National Monument')
+    .get('.homepage-add-btn').contains('+')
+  })
+
+  it('Activity Form- placeholder & update on user interaction that filters ParkCards', () => {
+    cy.get('form')
+    .get('input').invoke('attr', 'placeholder').should('contain', 'What do you love to do?')
+    .get('input').type('Biking').should('have.value', 'Biking')
+    .type('{enter}')
+
+    .get('main')
+    .get(':nth-child(1) > a > .white-box').contains('Alcatraz Island').should('not.exist')
+    .get('.white-box').contains('h2', 'Cabrillo National Monument')
+  })
+
+  it('Park Page- display all info at unique URL based on clicked ParkCard', () => {
+    cy.get(':nth-child(1) > a > .background-image').click()
+    .url().should('include', 'alca')
+
+    .get('.park-page-title').contains('Alcatraz Island')
+    .get('.park-page-add-btn').contains('Add to Bucket List')
+    .get('.activity-container > :nth-child(1)').contains('Food')
+    .get('.activity-container > :nth-child(5)').contains('Bookstore and Park Store')
+    .get('p').contains('Alcatraz reveals stories of American incarceration, justice, and our common humanity.')
+    .get('.learn-more-btn').contains('Learn More')
+    .get('img').should('have.attr', 'src').should('include', 'https://www.nps.gov/common/uploads/structured_data/5482A294-DB42-56E0-FCCCD03C986AE1DC.jpg')
+
+    // .get('.learn-more-btn').invoke('removeAttr', 'target').click()
+    // .url().should('include', 'https://www.nps.gov/alca/index.htm')
+  })
+
+  it('Return to Home- click app title or home icon', () => {
+    cy.get(':nth-child(1) > a > .background-image').click()
+    .get('h1').click()
+    .url().should('include', 'http://localhost:3000/#/')
+    
+    cy.get(':nth-child(1) > a > .background-image').click()
+    .get('.home-icon').click()
+    .url().should('include', 'http://localhost:3000/#/')
+  })
+})
