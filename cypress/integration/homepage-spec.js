@@ -10,11 +10,19 @@ describe('Homepage Tests', () => {
       })
   })
 
-  it('Header- app title & nav elements', () => {
+  it('Header- app title & nav elements, click to go home functionality', () => {
     cy.get('header')
     .contains('h1', 'Where to Next?')
     .get('.home-icon')
     .get('.bucket-list-btn').contains('My Bucket List')
+
+    cy.get(':nth-child(1) > a > .background-image').click()
+    .get('h1').click()
+    .url().should('include', 'http://localhost:3000/#/')
+    
+    cy.get(':nth-child(1) > a > .background-image').click()
+    .get('.home-icon').click()
+    .url().should('include', 'http://localhost:3000/#/')
   })
 
   it('ParkCards- display all on load', () => {
@@ -28,7 +36,7 @@ describe('Homepage Tests', () => {
     .get('.homepage-add-btn').contains('+')
   })
 
-  it('Activity Form- placeholder & update on user interaction that filters ParkCards', () => {
+  it('Activity Form- placeholder text & updates with user interaction, filters ParkCards accordingly', () => {
     cy.get('form')
     .get('input').invoke('attr', 'placeholder').should('contain', 'What do you love to do?')
     .get('input').type('Biking').should('have.value', 'Biking')
@@ -37,6 +45,12 @@ describe('Homepage Tests', () => {
     .get('main')
     .get(':nth-child(1) > a > .white-box').contains('Alcatraz Island').should('not.exist')
     .get('.white-box').contains('h2', 'Cabrillo National Monument')
+  })
+
+  it('Activity Form sad path- user inputs jargon, all cards should still display', () => {
+    cy.get('input').type('banana')
+    .get(':nth-child(1) > a > .white-box').contains('Alcatraz Island')
+    .get(':nth-child(2) > a > .white-box').contains('Cabrillo National Monument')
   })
 
   it('Park Page- display all info at unique URL based on clicked ParkCard', () => {
@@ -55,13 +69,14 @@ describe('Homepage Tests', () => {
     // .url().should('include', 'https://www.nps.gov/alca/index.htm')
   })
 
-  it('Return to Home- click app title or home icon', () => {
+  it('Bucket List- add cards to bucket list, display bucket list, clickthrough to ParkPage', () => {
     cy.get(':nth-child(1) > a > .background-image').click()
-    .get('h1').click()
-    .url().should('include', 'http://localhost:3000/#/')
-    
-    cy.get(':nth-child(1) > a > .background-image').click()
-    .get('.home-icon').click()
-    .url().should('include', 'http://localhost:3000/#/')
+    .get('.park-page-add-btn').click()
+    cy.get('.bucket-list-btn').click()
+    .get('.white-box').contains('Alcatraz Island')
+    .click()
+    .url().should('include', 'alca')
+    .get('.park-page-title').contains('Alcatraz Island')
   })
+
 })
