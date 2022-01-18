@@ -40,13 +40,10 @@ To run locally:
 - Users can click the 'Add to Bucket List' button. A feedback message displays accordingly- that the park was added or that it had already been so previously.
 
 ### View bucket list
-- To view their personalized buclet list, users can the 'My Bucket List' button in the top right corner.   
+- To view their personalized buclet list, users can the 'My Bucket List' button in the top right corner.    
 
 ### Responsive design
 - Desktop, tablet, & mobile viewing was considered in the design.
-
-### Error handling
-- 404 & 500-level error handling is in place.
 
 ## Future Directions
 - Expand past California and offer service to all states. Add functionality to filter by both state and activity.

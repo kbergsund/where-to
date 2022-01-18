@@ -7,7 +7,7 @@ const Header = () => {
     <header>
       <Link to='/'><h1>Where to Next?</h1></Link>
       <nav>
-        <Link to='/' className='home-icon'><HiHome size={30} /></Link>
+        <Link title='Link to homepage' to='/' className='home-icon'><HiHome size={30} /></Link>
         <Link to='/bucketlist' className='bucket-list-btn'>My Bucket List</Link>
       </nav>
     </header>

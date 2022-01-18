@@ -13,11 +13,10 @@ const ActivityForm = ({ activities, filterParks }) => {
 
   return (
     <form onSubmit={e => e.preventDefault()}>
-      {/* <label htmlFor="activity">Select Activity:</label> */}
       <input
+        aria-label="Activity dropdown to filter destinations by"
         list="activityList"
         placeholder="What do you love to do?"
-        // id="activity"
         value={selectedActivity}
         onChange={e => setActivity(e.target.value)} />
       <datalist id="activityList">
