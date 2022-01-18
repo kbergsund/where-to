@@ -9,7 +9,7 @@ header {
   background-position: right;
   height: 45vh;
   @include flex-space-between();
-  padding: 1em;
+  padding: 2em;
 
   h1 {
     text-decoration: none;
