@@ -3,7 +3,7 @@
 #### Discover your next adventure... 🌎
 
 ## Introduction
-`Where to Next?` is for planning outdoor trips. When wanderlust hits but you don't know where to go. Quickly and seamlessly zero in on top California destinations that offer your favorite activities. Click any destination to learn more and see what other activities it has to offer. If you like what you see, add the destination to your personal bucket list. Return later to revisit your bucket list. While viewing destination details, click the 'Learn More' button to be directed to the official National Park Service site, where you can start locking in an itinerary.
+[`Where to Next?`](https://where-to-next.surge.sh/) is for planning outdoor trips. When wanderlust hits but you don't know where to go. Quickly and seamlessly zero in on top California destinations that offer your favorite activities. Click any destination to learn more and see what other activities it has to offer. If you like what you see, add the destination to your personal bucket list. Return later to revisit your bucket list. While viewing destination details, click the 'Learn More' button to be directed to the official National Park Service site, where you can start locking in an itinerary.
 
 Built over the course of 4 days and presented as my final solo project for Module 3 of [Turing School of Software & Design's](https://turing.edu/) Front-End Engineering program.
 
@@ -17,7 +17,7 @@ Built over the course of 4 days and presented as my final solo project for Modul
 ![NPM](https://img.shields.io/badge/NPM-%23000000.svg?style=for-the-badge&logo=npm&logoColor=white)
 
 ## Deployment
-View in browser at the deployed link HERE.
+View in browser at the deployed link [HERE](https://where-to-next.surge.sh/).
 
 To run locally:
 1. Clone this repo down to your local machine.
