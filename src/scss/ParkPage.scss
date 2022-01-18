@@ -1,3 +1,5 @@
+@import 'variables';
+
 .park-page {
   width: 90vw;
   min-height: fit-content;
@@ -32,20 +34,20 @@
   //   align-items: center;
 
     .park-page-add-btn {
-      background-color: #F24738;
-      color: #fff;
+      background-color: $orange;
+      color: $light-gray;
       min-width: 150px;
       transition: all 100ms ease-in-out;
       margin: 0 .5em;
 
       &:hover {
-        background-color: #F2B138;
-        color: #252324;
+        background-color: $yellow;
+        color: $dark-gray;
       }
 
       &:active {
-        background-color: #F24738;
-        color: #fff;
+        background-color: $orange;
+        color: $light-gray;
       }
     // }
   }
@@ -58,19 +60,19 @@
   }
 
   .learn-more-btn {
-    background-color: #AEF2E6;
+    background-color: $seafoam;
     display: flex;
     align-items: center;
     justify-content: center;
     text-decoration: none;
-    color: #252324;
+    color: $dark-gray;
     margin-top: 2em;
     width: 150px;
     transition: all 100ms ease-in-out;
 
     &:hover {
-      background-color: #252324;
-      color: #AEF2E6;
+      background-color: $dark-gray;
+      color: $seafoam;
     }
   }
 }
@@ -80,7 +82,7 @@
   
   .activity {
     display: inline-block;
-    background-color: #f2f2f2;
+    background-color: $light-gray;
     margin: .7em .6em 0 0;
     padding: .2em .5em;
     border-radius: 5px;

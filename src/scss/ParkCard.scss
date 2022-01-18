@@ -1,3 +1,5 @@
+@import 'variables';
+
 .park-card {
   width: 100%;
   height: 15em;
@@ -27,7 +29,7 @@
 }
 
 .white-box {
-  background-color: rgba(255, 255, 255, 0.75);
+  background-color: rgba(242, 242, 242, 0.75);
   border-radius: 0 0 10px 10px;
   width: 100%;
   height: 4.5em;
@@ -50,6 +52,6 @@ h2 {
   background: transparent;
   max-height: fit-content;
   font-size: 2.5em;
-  color: #F24738;
+  color: $orange;
   padding: 0 .2em 0 .5em;
 }

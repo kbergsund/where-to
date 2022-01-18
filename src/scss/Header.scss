@@ -1,7 +1,9 @@
+@import 'variables';
+
 header {
   height: 45vh;
   background:
-    linear-gradient(to bottom, transparent, #f2f2f2),
+    linear-gradient(to bottom, transparent, $light-gray),
     url('../assets/HeroImage.jpeg');
   background-size: cover;
   background-position: center;
@@ -14,11 +16,11 @@ header {
     transition: all 100ms ease-in-out;
 
     &:hover {
-      color: #F24738;
+      color: $orange;
     }
 
     &:active {
-      color: #252324;
+      color: $dark-gray;
     }
   }
 }
@@ -30,11 +32,11 @@ nav {
 
   .home-icon {
     &:hover {
-      color: #F24738;
+      color: $orange;
     }
 
     &:active {
-      color: #252324;
+      color: $dark-gray;
     }
   }
 
@@ -42,8 +44,8 @@ nav {
     border-radius: 10px;
     font-size: .8em;
     height: 2.5em;
-    background-color: #F24738;
-    color: #fff;
+    background-color: $orange;
+    color: $light-gray;
     width: 110px;
     transition: all 100ms ease-in-out;
     display: flex;
@@ -51,13 +53,13 @@ nav {
     align-items: center;
 
     &:hover {
-      background-color: #F2B138;
-      color: #252324;
+      background-color: $yellow;
+      color: $dark-gray;
     }
 
     &:active {
-      background-color: #F24738;
-      color: #fff;
+      background-color: $orange;
+      color: $light-gray;
     }
   }
 }

@@ -1,3 +1,5 @@
+@import 'variables';
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -8,7 +10,7 @@
 body {
   font-family: 'Nunito', 'Arial', sans-serif;
   min-height: 100vh;
-  color: #252324;
+  color: $dark-gray;
 }
 
 button:hover {
@@ -21,7 +23,7 @@ p {
 
 a {
   text-decoration: none;
-  color: #252324;
+  color: $dark-gray;
   height: fit-content;
 }
 

@@ -1,7 +1,9 @@
+@import 'variables';
+
 form {
   width: 90vw;
   height: 4em;
-  background-color: #AEF2E6;
+  background-color: $seafoam;
   border-radius: 10px;
   display: flex;
   align-items: center;
