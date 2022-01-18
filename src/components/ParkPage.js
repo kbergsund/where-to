@@ -42,7 +42,7 @@ const ParkPage = ({ parks, alreadyAdded, addToBucketList }) => {
 
   return (
     <section className='park-page'>
-      {clickedPark ? clickedParkDisplay : <ErrorPage />}
+      {clickedPark ? clickedParkDisplay : <ErrorPage error='invalid URL'/>}
       {bucketListMsgStyles}
     </section>
   )
