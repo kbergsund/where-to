@@ -73,7 +73,7 @@ const ParkContainer = () => {
     ? parks.map(park => <ParkCard key={park.parkCode} parkCode={park.parkCode} name={park.fullName} imageURL={park.images[0].url} />)
     : filteredParks.map(park => <ParkCard key={park.parkCode} parkCode={park.parkCode} name={park.fullName} imageURL={park.images[0].url} />)
 
-  const displayBucketListCards = !bucketList.length ? <p>You haven't added any trips to your bucket list yet!</p> : bucketList.map(park => <ParkCard key={park.parkCode} parkCode={park.parkCode} name={park.fullName} imageURL={park.images[0].url} />)
+  const displayBucketListCards = !bucketList.length ? <p className='no-bucket-list'>You haven't added any trips to your bucket list yet! <br /> Click on a park card from the homepage to do so :)</p> : bucketList.map(park => <ParkCard key={park.parkCode} parkCode={park.parkCode} name={park.fullName} imageURL={park.images[0].url} />)
 
   const renderMain = error ? <ErrorPage err={error} /> :
     <Routes>

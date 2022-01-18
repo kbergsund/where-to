@@ -6,7 +6,7 @@ header {
     linear-gradient(to bottom, transparent, $light-gray),
     url('../assets/HeroImage.jpeg');
   background-size: cover;
-  background-position: center;
+  background-position: right;
   height: 45vh;
   @include flex-space-between();
   padding: 1em;

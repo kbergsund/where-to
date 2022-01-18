@@ -98,3 +98,35 @@
 .hide {
   opacity: 0%;
 }
+
+@media screen and (max-width: 1050px) {
+  .park-page {
+    flex-direction: column;
+
+    img {
+      margin-top: 2em;
+      width: 60%;
+      height: auto;
+    }
+  }
+
+  .left-side-content {
+    margin: 0;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 530px) {
+  .title-btn {
+    flex-direction: column;
+  }
+
+  .bucket-list-btn-container {
+    flex-direction: column;
+    max-width: fit-content;
+
+    .park-page-add-btn {
+      margin: .2em 0;
+    }
+  }
+}
