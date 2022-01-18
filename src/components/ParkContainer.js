@@ -13,6 +13,7 @@ const ParkContainer = () => {
     const existingBucketList = JSON.parse(localStorage.getItem("savedBucketList"));
     return existingBucketList || []
   })
+  const [alreadyAdded, setAlreadyAdded] = useState(null)
 
   useEffect(() => {
     fetchData()
@@ -55,12 +56,20 @@ const ParkContainer = () => {
   }
 
   const addToBucketList = (park) => {
-    !bucketList.includes(park) && setBucketList([...bucketList, park])
+    if (!bucketList.find(bucketListPark => bucketListPark.parkCode === park.parkCode)) {
+      setBucketList([...bucketList, park])
+      setAlreadyAdded('no')
+    } else {
+      setAlreadyAdded('yes')
+    }
+    setTimeout(() => {
+      setAlreadyAdded(null)
+    }, 1000)
   }
 
-  const displayParkCards = !filteredParks.length 
-  ? parks.map(park => <ParkCard key={park.parkCode} parkCode={park.parkCode} name={park.fullName} imageURL={park.images[0].url} />) 
-  : filteredParks.map(park => <ParkCard key={park.parkCode} parkCode={park.parkCode} name={park.fullName} imageURL={park.images[0].url} />)
+  const displayParkCards = !filteredParks.length
+    ? parks.map(park => <ParkCard key={park.parkCode} parkCode={park.parkCode} name={park.fullName} imageURL={park.images[0].url} />)
+    : filteredParks.map(park => <ParkCard key={park.parkCode} parkCode={park.parkCode} name={park.fullName} imageURL={park.images[0].url} />)
 
   const displayBucketListCards = !bucketList.length ? <p>You haven't added any trips to your bucket list yet!</p> : bucketList.map(park => <ParkCard key={park.parkCode} parkCode={park.parkCode} name={park.fullName} imageURL={park.images[0].url} />)
 
@@ -76,9 +85,9 @@ const ParkContainer = () => {
             </section>
           </Fragment>
         } />
-        <Route path='/:parkCode' element={ <ParkPage parks={parks} addToBucketList={addToBucketList} /> } />
-        <Route path='/bucketlist' element = {
-        <Fragment>
+        <Route path='/:parkCode' element={<ParkPage parks={parks} alreadyAdded={alreadyAdded} addToBucketList={addToBucketList} />} />
+        <Route path='/bucketlist' element={
+          <Fragment>
             <section className='park-container'>
               {displayBucketListCards}
             </section>

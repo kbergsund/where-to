@@ -36,7 +36,7 @@ describe('Homepage Tests', () => {
     .get('.homepage-add-btn').contains('+')
   })
 
-  it('Activity Form- placeholder text & updates with user interaction, filters ParkCards accordingly', () => {
+  it('Activity Form- appearance on load, updates with user interaction & filters ParkCards accordingly', () => {
     cy.get('form')
     .get('input').invoke('attr', 'placeholder').should('contain', 'What do you love to do?')
     .get('input').type('Biking').should('have.value', 'Biking')
@@ -83,5 +83,9 @@ describe('Homepage Tests', () => {
     cy.visit('http://localhost:3000/#/banana')
     .get('.park-page').contains('Invalid URL')
   })
+
+  // it('Bucket List sad path- any park can only be added once', () => {
+  
+  // })
 
 })
