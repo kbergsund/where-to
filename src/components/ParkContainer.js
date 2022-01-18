@@ -77,7 +77,6 @@ const ParkContainer = () => {
 
   const renderMain = error ? <ErrorPage err={error} /> :
     <Routes>
-      <Route path='*' element={<p>HELLO</p>} />
       <Route path='/' element={
         <Fragment>
           <ActivityForm activities={activities} filterParks={filterParks} />
