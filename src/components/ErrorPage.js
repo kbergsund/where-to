@@ -5,7 +5,8 @@ import '../scss/ErrorPage.scss';
 
 
 const ErrorPage = ({ err }) => {
-  const error = err.message === 'Failed to fetch' ?
+  const error = err ? err.message : 'invalid URL'
+  const errorContent = error.message === 'Failed to fetch' ?
   <Fragment>
     <p className='server-down'>Server down, unable to fetch park data. <br/> Go spend some time outside & try again later!</p>
   </Fragment> :
@@ -15,7 +16,7 @@ const ErrorPage = ({ err }) => {
   </Fragment>
 
   return (
-    <section className='error-page'>{error}</section>
+    <section className='error-page'>{errorContent}</section>
   )
 }
 
