@@ -6,7 +6,7 @@ describe('Homepage Tests', () => {
           statusCode: 200,
           body: allParks
         })
-        cy.visit('http://localhost:3000/#/')
+        cy.visit('http://localhost:3000/')
       })
   })
 
@@ -17,10 +17,10 @@ describe('Homepage Tests', () => {
       .get('.bucket-list-btn').contains('My Bucket List')
     .get(':nth-child(1) > a > .background-image').click()
       .get('h1').click()
-      .url().should('eq', 'http://localhost:3000/#/')
+      .url().should('eq', 'http://localhost:3000/')
     .get(':nth-child(1) > a > .background-image').click()
       .get('.home-icon').click()
-      .url().should('eq', 'http://localhost:3000/#/')
+      .url().should('eq', 'http://localhost:3000/')
   })
 
   it('ParkCards- display all on load', () => {
@@ -80,9 +80,9 @@ describe('Homepage Tests', () => {
   })
 
   it('Router sad path- invalid URL', () => {
-    cy.visit('http://localhost:3000/#/banana')
+    cy.visit('http://localhost:3000/banana')
       .get('.park-page').contains('404 - Invalid URL')
       .get('.error-home-icon').click()
-      .url().should('eq', 'http://localhost:3000/#/')
+      .url().should('eq', 'http://localhost:3000/')
   })
 })
