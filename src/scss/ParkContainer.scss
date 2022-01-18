@@ -1,11 +1,11 @@
 @import 'variables';
 
 main {
+  align-items: center;
   background-color: $light-gray;
-  min-height: 55vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  min-height: 55vh;
   padding-bottom: 3em;
 }
 
@@ -13,6 +13,6 @@ main {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   grid-gap: 1em;
-  width: 90vw;
   margin-top: 2em;
+  width: 90vw;
 }

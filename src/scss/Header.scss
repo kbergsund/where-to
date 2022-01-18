@@ -1,65 +1,38 @@
 @import 'variables';
+@import 'mixins';
 
 header {
-  height: 45vh;
   background:
     linear-gradient(to bottom, transparent, $light-gray),
     url('../assets/HeroImage.jpeg');
   background-size: cover;
   background-position: center;
+  height: 45vh;
+  @include flex-space-between();
   padding: 1em;
-  display: flex;
-  justify-content: space-between;
 
   h1 {
     text-decoration: none;
     transition: all 100ms ease-in-out;
-
-    &:hover {
-      color: $orange;
-    }
-
-    &:active {
-      color: $dark-gray;
-    }
+    @include orange-gray-btn()
   }
 }
 
 nav {
-  display: flex;
-  justify-content: space-between;
+  @include flex-space-between();
   width: 160px;
 
   .home-icon {
-    &:hover {
-      color: $orange;
-    }
-
-    &:active {
-      color: $dark-gray;
-    }
+    @include orange-gray-btn()
   }
 
   .bucket-list-btn {
     border-radius: 10px;
     font-size: .8em;
     height: 2.5em;
-    background-color: $orange;
-    color: $light-gray;
-    width: 110px;
+    @include flex-center-center();
+    @include orange-yellow-btn();
     transition: all 100ms ease-in-out;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    &:hover {
-      background-color: $yellow;
-      color: $dark-gray;
-    }
-
-    &:active {
-      background-color: $orange;
-      color: $light-gray;
-    }
+    width: 110px;
   }
 }

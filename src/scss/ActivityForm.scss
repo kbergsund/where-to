@@ -1,18 +1,17 @@
 @import 'variables';
+@import 'mixins';
 
 form {
-  width: 90vw;
-  height: 4em;
   background-color: $seafoam;
   border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  height: 4em;
+  @include flex-center-center();
+  width: 90vw;
 
   input {
     border-radius: 7px;
-    width: 70%;
     height: 2.75em;
     padding: 1em;
+    width: 70%;
   }
 }

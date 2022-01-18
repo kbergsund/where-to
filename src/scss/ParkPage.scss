@@ -1,55 +1,59 @@
 @import 'variables';
+@import 'mixins';
 
 .park-page {
-  width: 90vw;
-  min-height: fit-content;
+  align-items: center;
   background-color: #fff;
   border-radius: 10px;
   display: flex;
-  align-items: center;
+  min-height: fit-content;
   padding: 2em;
+  width: 90vw;
+
+  img {
+    border-radius: 10px;
+    height: 250px;
+  }
 }
 
 .left-side-content {
-  height: 100%;
-  margin-right: 5em;
-  display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  height: 100%;
+  @include flex-space-between();
+  margin-right: 4em;
 
   .title-btn {
-    display: flex;
-    justify-content: space-between;
     align-items: flex-start;
+    @include flex-space-between();
 
     .park-page-title {
       font-size: 1.3em;
-      padding-top: 0;
       margin: 0 2em .5em 0;
+      padding-top: 0;
+    }
+
+    .bucket-list-btn-container {
+      align-items: center;
+      display: flex;
+      width: 300px;
+    }
+
+    .add-confirmation {
+      vertical-align: center;
+    }
+
+    .add-denial {
+      font-size: .7em;
+      text-align: right;
+      vertical-align: center;
     }
   }
 
-  // .park-page-add-container {
-  //   display: flex;
-  //   align-items: center;
-
-    .park-page-add-btn {
-      background-color: $orange;
-      color: $light-gray;
-      min-width: 150px;
-      transition: all 100ms ease-in-out;
-      margin: 0 .5em;
-
-      &:hover {
-        background-color: $yellow;
-        color: $dark-gray;
-      }
-
-      &:active {
-        background-color: $orange;
-        color: $light-gray;
-      }
-    // }
+  .park-page-add-btn {
+    @include orange-yellow-btn();
+    margin: 0 .5em;
+    min-width: 150px;
+    transition: all 100ms ease-in-out;
   }
 
   .park-page-add-btn,
@@ -61,14 +65,12 @@
 
   .learn-more-btn {
     background-color: $seafoam;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
     color: $dark-gray;
+    @include flex-center-center();
     margin-top: 2em;
-    width: 150px;
+    text-decoration: none;
     transition: all 100ms ease-in-out;
+    width: 150px;
 
     &:hover {
       background-color: $dark-gray;
@@ -79,19 +81,14 @@
 
 .activity-container {
   margin: 0 0 1em 0;
-  
+
   .activity {
-    display: inline-block;
     background-color: $light-gray;
+    border-radius: 5px;
+    display: inline-block;
     margin: .7em .6em 0 0;
     padding: .2em .5em;
-    border-radius: 5px;
   }
-}
-
-img {
-  height: 250px;
-  border-radius: 10px;
 }
 
 .display {
