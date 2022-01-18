@@ -13,7 +13,7 @@ const ParkContainer = () => {
     const existingBucketList = JSON.parse(localStorage.getItem("savedBucketList"));
     return existingBucketList || []
   })
-  const [addedToBucketList, setAddedToBucketList] = useState(false)
+  const [alreadyAdded, setAlreadyAdded] = useState(null)
 
   useEffect(() => {
     fetchData()
@@ -57,11 +57,14 @@ const ParkContainer = () => {
 
   const addToBucketList = (park) => {
     if (!bucketList.find(bucketListPark => bucketListPark.parkCode === park.parkCode)) {
-      setBucketList([...bucketList, park]);
-      setAddedToBucketList(false)
+      setBucketList([...bucketList, park])
+      setAlreadyAdded('no')
     } else {
-      setAddedToBucketList(true)
+      setAlreadyAdded('yes')
     }
+    setTimeout(() => {
+      setAlreadyAdded(null)
+    }, 1000)
   }
 
   const displayParkCards = !filteredParks.length
@@ -82,7 +85,7 @@ const ParkContainer = () => {
             </section>
           </Fragment>
         } />
-        <Route path='/:parkCode' element={<ParkPage parks={parks} addToBucketList={addToBucketList} addedToBucketList={addedToBucketList} />} />
+        <Route path='/:parkCode' element={<ParkPage parks={parks} alreadyAdded={alreadyAdded} addToBucketList={addToBucketList} />} />
         <Route path='/bucketlist' element={
           <Fragment>
             <section className='park-container'>
