@@ -1,6 +1,7 @@
 import { Fragment } from 'react';
 import { useParams } from 'react-router-dom';
 import propTypes from 'prop-types';
+import ErrorPage from './ErrorPage';
 import '../scss/ParkPage.scss';
 
 const ParkPage = ({ parks, alreadyAdded, addToBucketList }) => {
@@ -41,7 +42,7 @@ const ParkPage = ({ parks, alreadyAdded, addToBucketList }) => {
 
   return (
     <section className='park-page'>
-      {clickedPark ? clickedParkDisplay : <p>Invalid URL!</p>}
+      {clickedPark ? clickedParkDisplay : <ErrorPage />}
       {bucketListMsgStyles}
     </section>
   )
