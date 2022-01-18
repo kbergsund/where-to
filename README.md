@@ -1,6 +1,6 @@
 # Where to Next?
 
-#### Discover your next adventure... 🌎
+#### [Discover your next adventure...](https://where-to-next.surge.sh/) 🌎
 
 ## Introduction
 [`Where to Next?`](https://where-to-next.surge.sh/) is for planning outdoor trips. When wanderlust hits but you don't know where to go. Quickly and seamlessly zero in on top California destinations that offer your favorite activities. Click any destination to learn more and see what other activities you could enjoy while there. If you like what you see, add the destination to your personal bucket list. Return later to revisit your bucket list. While viewing destination details, click the 'Learn More' button to be directed to the official National Park Service site, where you can start locking in an itinerary.
