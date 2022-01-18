@@ -1,0 +1,23 @@
+.error-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  
+  .invalid-url {
+    font-size: 2.5em;
+  }
+
+  .server-down {
+    font-size: 2em;
+    margin: 3em;
+    text-align: center;
+  }
+
+  .error-home-icon {
+    &:hover {
+      color: #F24738;
+    }
+  }
+}

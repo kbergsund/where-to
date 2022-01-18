@@ -3,9 +3,11 @@ import { Route, Routes } from 'react-router-dom';
 import ActivityForm from './ActivityForm';
 import ParkCard from './ParkCard';
 import ParkPage from './ParkPage';
+import ErrorPage from './ErrorPage';
 import '../scss/ParkContainer.scss';
 
 const ParkContainer = () => {
+  const [error, setError] = useState(null)
   const [parks, setParks] = useState([]);
   const [activities, setActivities] = useState([]);
   const [filteredParks, setFilteredParks] = useState([]);
@@ -39,7 +41,7 @@ const ParkContainer = () => {
       }))
       setActivities(generateActivityList(data))
     } catch (err) {
-      console.log(err)
+      setError(err)
     }
   }
 
@@ -73,26 +75,29 @@ const ParkContainer = () => {
 
   const displayBucketListCards = !bucketList.length ? <p>You haven't added any trips to your bucket list yet!</p> : bucketList.map(park => <ParkCard key={park.parkCode} parkCode={park.parkCode} name={park.fullName} imageURL={park.images[0].url} />)
 
+  const renderMain = error ? <ErrorPage err={error} /> :
+    <Routes>
+      <Route path='*' element={<p>HELLO</p>} />
+      <Route path='/' element={
+        <Fragment>
+          <ActivityForm activities={activities} filterParks={filterParks} />
+          <section className='park-container'>
+            {displayParkCards}
+          </section>
+        </Fragment>
+      } />
+      <Route path='/:parkCode' element={<ParkPage parks={parks} alreadyAdded={alreadyAdded} addToBucketList={addToBucketList} />} />
+      <Route path='/bucketlist' element={
+        <Fragment>
+          <section className='park-container'>
+            {displayBucketListCards}
+          </section>
+        </Fragment>} />
+    </Routes>
+
   return (
     <main>
-      <Routes>
-        <Route path='*' element={<p>HELLO</p>} />
-        <Route path='/' element={
-          <Fragment>
-            <ActivityForm activities={activities} filterParks={filterParks} />
-            <section className='park-container'>
-              {displayParkCards}
-            </section>
-          </Fragment>
-        } />
-        <Route path='/:parkCode' element={<ParkPage parks={parks} alreadyAdded={alreadyAdded} addToBucketList={addToBucketList} />} />
-        <Route path='/bucketlist' element={
-          <Fragment>
-            <section className='park-container'>
-              {displayBucketListCards}
-            </section>
-          </Fragment>} />
-      </Routes>
+      {renderMain}
     </main>
   )
 }
