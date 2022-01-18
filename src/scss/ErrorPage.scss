@@ -1,8 +1,9 @@
+@import 'variables';
+@import 'mixins';
+
 .error-page {
-  display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  @include flex-center-center();
   width: 100%;
   
   .invalid-url {
@@ -17,7 +18,7 @@
 
   .error-home-icon {
     &:hover {
-      color: #F24738;
+      color: $orange;
     }
   }
 }

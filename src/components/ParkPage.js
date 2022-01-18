@@ -26,10 +26,12 @@ const ParkPage = ({ parks, alreadyAdded, addToBucketList }) => {
       <div className='left-side-content'>
         <div className='title-btn'>
           <h2 className='park-page-title'>{clickedPark.fullName}</h2>
-          <p className='add-denial'>You've already added this destination!</p>
-          <button className='park-page-add-btn'
-            onClick={() => addToBucketList(clickedPark)}>Add to Bucket List</button>
-          <p className='add-confirmation'>Added!</p>
+          <div className='bucket-list-btn-container'>
+            <p className='add-denial'>You've already added this destination!</p>
+            <button className='park-page-add-btn'
+              onClick={() => addToBucketList(clickedPark)}>Add to Bucket List</button>
+            <p className='add-confirmation'>Added!</p>
+          </div>
         </div>
         <div className='activity-container'>
           {displayActivities}
@@ -42,7 +44,7 @@ const ParkPage = ({ parks, alreadyAdded, addToBucketList }) => {
 
   return (
     <section className='park-page'>
-      {clickedPark ? clickedParkDisplay : <ErrorPage error='invalid URL'/>}
+      {clickedPark ? clickedParkDisplay : <ErrorPage error='invalid URL' />}
       {bucketListMsgStyles}
     </section>
   )

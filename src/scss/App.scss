@@ -1,14 +1,16 @@
+@import 'variables';
+
 * {
+  border: 0;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  border: 0;
 }
 
 body {
+  color: $dark-gray;
   font-family: 'Nunito', 'Arial', sans-serif;
   min-height: 100vh;
-  color: #252324;
 }
 
 button:hover {
@@ -20,9 +22,9 @@ p {
 }
 
 a {
-  text-decoration: none;
-  color: #252324;
+  color: $dark-gray;
   height: fit-content;
+  text-decoration: none;
 }
 
 form,
