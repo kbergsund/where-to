@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { HiHome } from 'react-icons/hi';
 import '../scss/ErrorPage.scss';
 
-
 const ErrorPage = ({ err }) => {
   const error = err ? err.message : 'invalid URL'
   const errorContent = error.message === 'Failed to fetch' ?
