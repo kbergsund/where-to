@@ -1,3 +1,51 @@
+@import 'variables';
+@import 'mixins';
+
 header {
-  border: 1px solid blue;
+  background:
+    linear-gradient(to bottom, transparent, $light-gray),
+    url('../assets/HeroImage.jpeg');
+  background-size: cover;
+  background-position: right;
+  height: 44vh;
+  @include flex-space-between();
+  padding: 2em;
+
+  h1 {
+    text-decoration: none;
+    transition: color 100ms ease-in-out;
+    @include orange-gray-btn()
+  }
+}
+
+nav {
+  @include flex-space-between();
+  width: 160px;
+  height: fit-content;
+
+  .home-icon {
+    @include orange-gray-btn()
+  }
+
+  .bucket-list-btn {
+    border-radius: 10px;
+    font-size: .8em;
+    height: 2.5em;
+    @include flex-center-center();
+    @include orange-yellow-btn();
+    transition: all 100ms ease-in-out;
+    width: 110px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  h1 {
+    font-size: 1.5em;
+  }
+
+  nav {
+    flex-direction: column;
+    align-items: flex-end;
+    width: 120px;
+  }
 }

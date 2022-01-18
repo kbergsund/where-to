@@ -1,0 +1,37 @@
+@import 'variables';
+
+@mixin flex-center-center () {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-space-between () {
+  display: flex;
+  justify-content: space-between;
+}
+
+@mixin orange-gray-btn () {
+  &:hover {
+    color: $orange;
+  }
+
+  &:active {
+    color: $dark-gray;
+  }
+}
+
+@mixin orange-yellow-btn () {
+  background-color: $orange;
+  color: $light-gray;
+
+  &:hover {
+    background-color: $yellow;
+    color: $dark-gray;
+  }
+
+  &:active {
+    background-color: $orange;
+    color: $light-gray;
+  }
+}

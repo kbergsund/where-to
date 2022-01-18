@@ -1,0 +1,57 @@
+@import 'variables';
+@import 'mixins';
+
+.park-card {
+  border-radius: 10px;
+  height: 15em;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.background-image {
+  align-items: flex-end;
+  background-position: top;
+  background-size: cover;
+  border-radius: 10px;
+  display: flex;
+  height: 100%;
+  position: absolute;
+  transition: all 200ms ease-in-out;
+  width: 100%;
+
+  &:hover {
+    transform: scale(1.04);
+  }
+}
+
+.white-box {
+  background-color: rgba(242, 242, 242, 0.75);
+  border-radius: 0 0 10px 10px;
+  bottom: 0px;
+  height: 4.5em;
+  @include flex-space-between();
+  overflow: auto;
+  padding: .5em;
+  position: absolute;
+  width: 100%;
+  word-break: break-word;
+}
+
+h2 {
+  color: #252324;
+  font-size: 1em;
+  padding-top: .5em;
+}
+
+.homepage-add-btn {
+  background: transparent;
+  color: $orange;
+  font-size: 2.5em;
+  max-height: fit-content;
+  padding: 0 .2em 0 .5em;
+}

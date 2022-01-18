@@ -1,0 +1,131 @@
+{
+  "data": [
+    {
+      "url": "https://www.nps.gov/alca/index.htm",
+      "fullName": "Alcatraz Island",
+      "parkCode": "alca",
+      "description": "Alcatraz reveals stories of American incarceration, justice, and our common humanity. This small island was once a fort, a military prison, and a maximum security federal penitentiary. In 1969, the Indians of All Tribes occupied Alcatraz for 19 months in the name of freedom and Native American civil rights. We invite you to explore Alcatraz's complex history and natural beauty.",
+      "activities": [
+        {
+          "id": "1DFACD97-1B9C-4F5A-80F2-05593604799E",
+          "name": "Food"
+        },
+        {
+          "id": "0B685688-3405-4E2A-ABBA-E3069492EC50",
+          "name": "Wildlife Watching"
+        },
+        {
+          "id": "5A2C91D1-50EC-4B24-8BED-A2E11A1892DF",
+          "name": "Birdwatching"
+        },
+        {
+          "id": "24380E3F-AD9D-4E38-BF13-C8EEB21893E7",
+          "name": "Shopping"
+        },
+        {
+          "id": "467DC8B8-0B7D-436D-A026-80A22358F615",
+          "name": "Bookstore and Park Store"
+        }
+      ],
+      "images": [{
+          "credit": "NPS",
+          "title": "Alcatraz Island",
+          "altText": "View of the Alcatraz Lighthouse and Island from the water",
+          "caption": "Alcatraz Island",
+          "url": "https://www.nps.gov/common/uploads/structured_data/2514A14F-D5E3-BB31-4A0C4175BF61216A.jpg"
+        },
+        {
+          "credit": "NPS / Dave Rauenbuehler",
+          "title": "Alcatraz Cellhouse",
+          "altText": "A corridor extends between two rows and three tiers of cells. Skylights let in light from overhead.",
+          "caption": "Looking down Broadway in the Alcatraz Cellhouse",
+          "url": "https://www.nps.gov/common/uploads/structured_data/5482A294-DB42-56E0-FCCCD03C986AE1DC.jpg"
+        }
+      ]
+    },
+    {
+      "url": "https://www.nps.gov/cabr/index.htm",
+      "fullName": "Cabrillo National Monument",
+      "parkCode": "cabr",
+      "description": "Climbing out of his boat and onto shore in 1542, Juan Rodriguez Cabrillo stepped into history as the first European to set foot on what is now the West Coast of the United States. In addition to telling the story of 16th century exploration, the park is home to a wealth of cultural and natural resources. Join us and embark on your own Voyage of Exploration.",
+      "activities": [
+        {
+        "id": "7CE6E935-F839-4FEC-A63E-052B1DEF39D2",
+        "name": "Biking"
+        },
+        {
+        "id": "8D778629-F603-4C50-A121-6F4BB2FE2C4B",
+        "name": "Road Biking"
+        },
+        {
+        "id": "BFF8C027-7C8F-480B-A5F8-CD8CE490BFBA",
+        "name": "Hiking"
+        },
+        {
+        "id": "B204DE60-5A24-43DD-8902-C81625A09A74",
+        "name": "Living History"
+        },
+        {
+        "id": "A8650547-1A30-4222-86C3-A7660A829670",
+        "name": "Reenactments"
+        },
+        {
+        "id": "237A1662-6018-4115-ABD1-B8CCF827E703",
+        "name": "Historic Weapons Demonstration"
+        },
+        {
+        "id": "28880A5B-3D29-41AC-BD8B-24743E7A070F",
+        "name": "First Person Interpretation"
+        },
+        {
+        "id": "DF4A35E0-7983-4A3E-BC47-F37B872B0F25",
+        "name": "Junior Ranger Program"
+        },
+        {
+        "id": "0B685688-3405-4E2A-ABBA-E3069492EC50",
+        "name": "Wildlife Watching"
+        },
+        {
+        "id": "5A2C91D1-50EC-4B24-8BED-A2E11A1892DF",
+        "name": "Birdwatching"
+        },
+        {
+        "id": "0C0D142F-06B5-4BE1-8B44-491B90F93DEB",
+        "name": "Park Film"
+        },
+        {
+        "id": "C8F98B28-3C10-41AE-AA99-092B3B398C43",
+        "name": "Museum Exhibits"
+        },
+        {
+        "id": "24380E3F-AD9D-4E38-BF13-C8EEB21893E7",
+        "name": "Shopping"
+        },
+        {
+        "id": "467DC8B8-0B7D-436D-A026-80A22358F615",
+        "name": "Bookstore and Park Store"
+        },
+        {
+        "id": "43800AD1-D439-40F3-AAB3-9FB651FE45BB",
+        "name": "Gift Shop and Souvenirs"
+        }
+      ],
+      "images": [
+        {
+        "credit": "NPS Photo / Dan Zeller",
+        "title": "Rocky Intertidal Zone",
+        "altText": "Tidepools at Cabrillo",
+        "caption": "Low Tide at the Tidepools",
+        "url": "https://www.nps.gov/common/uploads/structured_data/3C83BD0E-1DD8-B71B-0B8A7140406810C6.jpg"
+        },
+        {
+        "credit": "NPS Photo / Mike Nelson",
+        "title": "Sunset at Cabrillo",
+        "altText": "Sun setting over the Pacific",
+        "caption": "Sunset at Cabrillo",
+        "url": "https://www.nps.gov/common/uploads/structured_data/3C83BE4E-1DD8-B71B-0B056AAA8EA8AD24.jpg"
+        }
+      ]
+    }
+  ]
+}

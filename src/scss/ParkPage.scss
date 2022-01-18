@@ -1,0 +1,132 @@
+@import 'variables';
+@import 'mixins';
+
+.park-page {
+  align-items: center;
+  background-color: #fff;
+  border-radius: 10px;
+  display: flex;
+  min-height: fit-content;
+  padding: 2em;
+  width: 90vw;
+
+  img {
+    border-radius: 10px;
+    height: 250px;
+  }
+}
+
+.left-side-content {
+  flex-direction: column;
+  height: 100%;
+  @include flex-space-between();
+  margin-right: 4em;
+
+  .title-btn {
+    align-items: flex-start;
+    @include flex-space-between();
+
+    .park-page-title {
+      font-size: 1.3em;
+      margin: 0 2em .5em 0;
+      padding-top: 0;
+    }
+
+    .bucket-list-btn-container {
+      align-items: center;
+      display: flex;
+      width: 300px;
+    }
+
+    .add-confirmation {
+      vertical-align: center;
+    }
+
+    .add-denial {
+      font-size: .7em;
+      text-align: right;
+      vertical-align: center;
+    }
+  }
+
+  .park-page-add-btn {
+    @include orange-yellow-btn();
+    margin: 0 .5em;
+    min-width: 150px;
+    transition: all 100ms ease-in-out;
+  }
+
+  .park-page-add-btn,
+  .learn-more-btn {
+    border-radius: 10px;
+    font-size: .8em;
+    min-height: 2.5em;
+  }
+
+  .learn-more-btn {
+    background-color: $seafoam;
+    color: $dark-gray;
+    @include flex-center-center();
+    margin-top: 2em;
+    text-decoration: none;
+    transition: all 100ms ease-in-out;
+    width: 150px;
+
+    &:hover {
+      background-color: $dark-gray;
+      color: $seafoam;
+    }
+  }
+}
+
+.activity-container {
+  margin: 0 0 1em 0;
+
+  .activity {
+    background-color: $light-gray;
+    border-radius: 5px;
+    display: inline-block;
+    margin: .7em .6em 0 0;
+    padding: .2em .5em;
+  }
+}
+
+.display {
+  opacity: 100%;
+}
+
+.hide {
+  opacity: 0%;
+}
+
+@media screen and (max-width: 1050px) {
+  .park-page {
+    flex-direction: column;
+
+    img {
+      margin-top: 2em;
+      width: 60%;
+      height: auto;
+    }
+  }
+
+  .left-side-content {
+    margin: 0;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 530px) {
+  .title-btn {
+    flex-direction: column;
+  }
+
+  .bucket-list-btn-container {
+    flex-direction: column;
+    max-width: fit-content;
+
+    .park-page-add-btn {
+      margin: .2em 0;
+    }
+  }
+}
